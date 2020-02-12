@@ -25,7 +25,8 @@ jobs:
             echo $GOPATH
             echo $PATH
             export GOPATH=/home/runner/go/bin/
-            dep ensure	
+            export PATH=/home/runner/go/bin/:$PATH
+            dep ensure
         fi
         make osx64
       
