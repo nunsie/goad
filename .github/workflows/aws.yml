@@ -24,7 +24,6 @@
 #    See the documentation for each action used below for the recommended IAM policies for this IAM user,
 #    and best practices on handling the access key credentials.
 
-
 on:
   push:
     branches:
@@ -78,6 +77,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: goad
+        service: goad-service
         cluster: goad
         wait-for-service-stability: true
