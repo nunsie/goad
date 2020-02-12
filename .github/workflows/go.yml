@@ -22,7 +22,7 @@ jobs:
         go get -u github.com/jteeuwen/go-bindata/...
 
     - name: Build
-      run: make osx
+      run: make osx64
       
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
