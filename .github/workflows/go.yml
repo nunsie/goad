@@ -21,7 +21,10 @@ jobs:
         go get -v -t -d ./...
         go get -u github.com/jteeuwen/go-bindata/...
         if [ -f Gopkg.toml ]; then	
-            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh	
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+            echo $GOPATH
+            echo $PATH
+            export GOPATH=/home/runner/go/bin/
             dep ensure	
         fi
         make osx64
