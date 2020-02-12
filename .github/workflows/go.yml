@@ -20,9 +20,11 @@ jobs:
       run: |
         go get -v -t -d ./...
         go get -u github.com/jteeuwen/go-bindata/...
-
-    - name: Build
-      run: make osx64
+        if [ -f Gopkg.toml ]; then	
+            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh	
+            dep ensure	
+        fi
+        make osx64
       
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
